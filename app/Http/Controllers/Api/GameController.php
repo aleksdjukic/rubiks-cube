@@ -16,21 +16,25 @@ class GameController extends Controller
         $orientation = $data['orientation'];
         $row = $data['row'];
 
+//        return $direction;
+
         $game = Game::orderBy('created_at', 'desc')->first();
 
         $matrix = $game->position;
 
         $array_to_rotate = $matrix[$orientation][$row];
 
+//        return $array_to_rotate;
+
         if ($direction == "left") {
-            for ($i = 0; $i < 3; $i++) {
+            for ($i = 1; $i < 4; $i++) {
                 $new_value = $array_to_rotate[$i];
                 unset($array_to_rotate[$i]); // remove item at index 0
                 array_push($array_to_rotate, $new_value);
             }
             $array_to_rotate = array_values($array_to_rotate); // 'reindex' array
         } else {
-            for ($i = 0; $i < 9; $i++) {
+            for ($i = 1; $i < 10; $i++) {
                 $new_value = $array_to_rotate[$i];
                 unset($array_to_rotate[$i]); // remove item at index 0
                 array_push($array_to_rotate, $new_value);
