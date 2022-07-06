@@ -1,6 +1,5 @@
 # [Rubic's cube](logo.png)
 
-
 This repo is partially functional.
 
 Image example: https://github.com/aleksdjukic/rubiks-cube/tree/main/public/rubics-cube.jpg
@@ -11,8 +10,8 @@ Image example: https://github.com/aleksdjukic/rubiks-cube/tree/main/public/rubic
 
 ## Installation
 
-Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/5.4/installation#installation)
-
+Please check the official laravel installation guide for server requirements before you
+start. [Official Documentation](https://laravel.com/docs/5.4/installation#installation)
 
 Clone the repository
 
@@ -59,7 +58,8 @@ You can now access the server at http://localhost:8000
 
 - `.env` - Environment variables can be set in this file
 
-***Note*** : You can quickly set the database information and other variables in this file and have the application fully working.
+***Note*** : You can quickly set the database information and other variables in this file and have the application
+fully working.
 
 ----------
 
@@ -74,7 +74,12 @@ The api can now be accessed at
     GET: http://localhost:8000/api/cube/1
 
 ----------
+
 ## API Specification
+
+A service intended for displaying the Rubik's cube, game and movement.
+
+Movements work on the principle of horizontal and vertical rows that moves.
 
 ### API Resources
 
@@ -83,226 +88,215 @@ The api can now be accessed at
 
 ### GET /api/cube/[game_id]
 
-Example: http://loocalohost:8000/api/cube/1
+A service intended to display the state of the Rubik's Cube, by game.
+
+Example: http://localhost:8000/api/cube/1
 
 Response body:
 
     {
-         'position' => [
-                'horizontal' => [
-                    '1' => [
-                        '1' => 'o1',
-                        '2' => 'o2',
-                        '3' => 'o3',
-
-                        '4' => 'g1',
-                        '5' => 'g2',
-                        '6' => 'g3',
-
-                        '7' => 'r1',
-                        '8' => 'r2',
-                        '9' => 'r3',
-
-                        '10' => 'b1',
-                        '11' => 'b2',
-                        '12' => 'b3',
-                    ],
-                    '2' => [
-                        '1' => 'o4',
-                        '2' => 'o5',
-                        '3' => 'o6',
-
-                        '4' => 'g4',
-                        '5' => 'g5',
-                        '6' => 'g6',
-
-                        '7' => 'r4',
-                        '8' => 'r5',
-                        '9' => 'r6',
-
-                        '10' => 'b4',
-                        '11' => 'b5',
-                        '12' => 'b6',
-                    ],
-                    '3' => [
-                        '1' => 'o7',
-                        '2' => 'o8',
-                        '3' => 'o9',
-
-                        '4' => 'g7',
-                        '5' => 'g8',
-                        '6' => 'g9',
-
-                        '7' => 'r7',
-                        '8' => 'r8',
-                        '9' => 'r9',
-
-                        '10' => 'b7',
-                        '11' => 'b8',
-                        '12' => 'b9',
-                    ],
-                ],
-                'vertical' => [
-                    '1' => [
-                        '1' => 'g1',
-                        '2' => 'g4',
-                        '3' => 'g7',
-
-                        '4' => 'y1',
-                        '5' => 'y4',
-                        '6' => 'y7',
-
-                        '7' => 'b1',
-                        '8' => 'b4',
-                        '9' => 'b7',
-
-                        '10' => 'w1',
-                        '11' => 'w4',
-                        '12' => 'w7',
-                    ],
-                    '2' => [
-                        '1' => 'g2',
-                        '2' => 'g5',
-                        '3' => 'g8',
-
-                        '4' => 'y2',
-                        '5' => 'y5',
-                        '6' => 'y8',
-
-                        '7' => 'b2',
-                        '8' => 'b5',
-                        '9' => 'b8',
-
-                        '10' => 'w2',
-                        '11' => 'w5',
-                        '12' => 'w8',
-                    ],
-                    '3' => [
-                        '1' => 'g3',
-                        '2' => 'g6',
-                        '3' => 'g9',
-
-                        '4' => 'y3',
-                        '5' => 'y6',
-                        '6' => 'y9',
-
-                        '7' => 'b3',
-                        '8' => 'b6',
-                        '9' => 'b9',
-
-                        '10' => 'w3',
-                        '11' => 'w6',
-                        '12' => 'w9',
-                    ],
-                ]
+    "position": {
+        "vertical": {
+            "1": [
+                "green1",
+                "green4",
+                "green7",
+                "yellow1",
+                "yellow4",
+                "yellow7",
+                "blue1",
+                "blue4",
+                "blue7",
+                "white1",
+                "white4",
+                "white7"
             ],
-            'Created_at' => time
+            "2": [
+                "green2",
+                "green5",
+                "green8",
+                "yellow2",
+                "yellow5",
+                "yellow8",
+                "blue2",
+                "blue5",
+                "blue8",
+                "white2",
+                "white5",
+                "white8"
+            ],
+            "3": [
+                "green3",
+                "green6",
+                "green9",
+                "yellow3",
+                "yellow6",
+                "yellow9",
+                "blue3",
+                "blue6",
+                "blue9",
+                "white3",
+                "white6",
+                "white9"
+            ]
+        },
+        "horizontal": {
+            "1": [
+                "orange1",
+                "orange2",
+                "orange3",
+                "green1",
+                "green2",
+                "green3",
+                "red1",
+                "red2",
+                "red3",
+                "blue1",
+                "blue2",
+                "blue3"
+            ],
+            "2": [
+                "orange4",
+                "orange5",
+                "orange6",
+                "green4",
+                "green5",
+                "green6",
+                "red4",
+                "red5",
+                "red6",
+                "blue4",
+                "blue5",
+                "blue6"
+            ],
+            "3": [
+                "orange7",
+                "orange8",
+                "orange9",
+                "green7",
+                "green8",
+                "green9",
+                "red7",
+                "red8",
+                "red9",
+                "blue7",
+                "blue8",
+                "blue9"
+            ]
+        }
     }
+
 
 ### POST /api/cube/rotate/[direction]/[orientation]/[row]
 
-Example: http://loocalohost:8000/api/cube/rotate?direction=right&orientation=vertical&row=1
+Service intended for movements on the Rubik's cube.
+(It only works for the row 2.)
+
+Direction can be left or right, and orientation horizontal or vertical.
+
+Example: http://localhost:8000/api/cube/rotate?direction=left&orientation=horizontal&row=2
 
 Request:
 
     {
          "direction" :  "left",
          "orientation" : "horizontal",
-         "row" : "1"
+         "row" : "2"
     }
 
 Response body:
 
     {
-    "vertical": {
-        "1": {
-            "1": "g1",
-            "2": "g4",
-            "3": "g7",
-            "4": "y1",
-            "5": "y4",
-            "6": "y7",
-            "7": "b1",
-            "8": "b4",
-            "9": "b7",
-            "10": "w1",
-            "11": "w4",
-            "12": "w7"
+    "position": {
+        "vertical": {
+            "1": [
+                "green1",
+                "green4",
+                "green7",
+                "yellow1",
+                "yellow4",
+                "yellow7",
+                "blue1",
+                "blue4",
+                "blue7",
+                "white1",
+                "white4",
+                "white7"
+            ],
+            "2": [
+                "green2",
+                "green5",
+                "green8",
+                "yellow2",
+                "yellow5",
+                "yellow8",
+                "blue2",
+                "blue5",
+                "blue8",
+                "white2",
+                "white5",
+                "white8"
+            ],
+            "3": [
+                "green3",
+                "green6",
+                "green9",
+                "yellow3",
+                "yellow6",
+                "yellow9",
+                "blue3",
+                "blue6",
+                "blue9",
+                "white3",
+                "white6",
+                "white9"
+            ]
         },
-        "2": {
-            "1": "g2",
-            "2": "g5",
-            "3": "g8",
-            "4": "y2",
-            "5": "y5",
-            "6": "y8",
-            "7": "b2",
-            "8": "b5",
-            "9": "b8",
-            "10": "w2",
-            "11": "w5",
-            "12": "w8"
-        },
-        "3": {
-            "1": "g3",
-            "2": "g6",
-            "3": "g9",
-            "4": "y3",
-            "5": "y6",
-            "6": "y9",
-            "7": "b3",
-            "8": "b6",
-            "9": "b9",
-            "10": "w3",
-            "11": "w6",
-            "12": "w9"
-        }
-    },
-    "horizontal": {
-        "1": {
-            "1": "o1",
-            "2": "o2",
-            "3": "o3",
-            "4": "g1",
-            "5": "g2",
-            "6": "g3",
-            "7": "r1",
-            "8": "r2",
-            "9": "r3",
-            "10": "b1",
-            "11": "b2",
-            "12": "b3"
-        },
-        "2": [
-            "g4",
-            "g5",
-            "g6",
-            "r4",
-            "r5",
-            "r6",
-            "b4",
-            "b5",
-            "b6",
-            "o4",
-            "o5",
-            "o6"
-        ],
-        "3": {
-            "1": "o7",
-            "2": "o8",
-            "3": "o9",
-            "4": "g7",
-            "5": "g8",
-            "6": "g9",
-            "7": "r7",
-            "8": "r8",
-            "9": "r9",
-            "10": "b7",
-            "11": "b8",
-            "12": "b9"
+        "horizontal": {
+            "1": [
+                "orange1",
+                "orange2",
+                "orange3",
+                "green1",
+                "green2",
+                "green3",
+                "red1",
+                "red2",
+                "red3",
+                "blue1",
+                "blue2",
+                "blue3"
+            ],
+            "2": [
+                "green4",
+                "green5",
+                "green6",
+                "red4",
+                "red5",
+                "red6",
+                "blue4",
+                "blue5",
+                "blue6",
+                "orange4",
+                "orange5",
+                "orange6"
+            ],
+            "3": [
+                "orange7",
+                "orange8",
+                "orange9",
+                "green7",
+                "green8",
+                "green9",
+                "red7",
+                "red8",
+                "red9",
+                "blue7",
+                "blue8",
+                "blue9"
+            ]
         }
     }
-}
 
 
 

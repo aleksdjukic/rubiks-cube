@@ -21,7 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('cube/rotate', [GameController::class, 'position'])->name('position');
 Route::get('cube/{id}', [GameController::class, 'game'])->name('game');
-Route::get('documentation', [GameController::class, 'documentation'])->name('documentation');
 
 
 
